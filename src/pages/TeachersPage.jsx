@@ -17,7 +17,6 @@ function TeachersPage() {
         fetchTeachers();
     }, []);
 
-    // Fetch teachers list
     const fetchTeachers = async () => {
         setLoading(true);
         try {
@@ -30,7 +29,6 @@ function TeachersPage() {
         }
     };
 
-    // Open Modal with teacher data if editing
     const openModal = async (teacherId = null) => {
         if (teacherId) {
             try {
@@ -49,14 +47,12 @@ function TeachersPage() {
         setIsModalOpen(true);
     };
 
-    // Close Modal
     const closeModal = () => {
         setIsModalOpen(false);
         setSelectedTeacherId(null);
         form.resetFields();
     };
 
-    // Handle Add or Update Teacher
     const handleFormSubmit = async () => {
         setModalLoading(true);
         try {
@@ -77,7 +73,6 @@ function TeachersPage() {
         }
     };
 
-    // Delete Teacher
     const deleteTeacher = async (teacherId) => {
         setLoading(true);
         try {
